@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
 	<link rel="stylesheet" href="css/style.css">
 	<title>Global</title>
 </head>
@@ -314,6 +314,13 @@
 	<script type="module" src="js/navigation.js"></script>
 	<script type ="module" src="js/works-slider.js"></script>
 	<script type="module" src="js/pages-slider.js"></script>
+	<script>
+		window.addEventListener('resize', () => {
+		// We execute the same script as before
+		let vh = window.innerHeight * 0.01;
+		document.documentElement.style.setProperty('--vh', `${vh}px`);
+});
+	</script>
 	<script src="js/form.js"></script>
 </body>
 </html>
