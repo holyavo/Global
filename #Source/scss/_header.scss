@@ -1,0 +1,111 @@
+.header__container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding-top: 20px;
+    height:52px
+}
+
+.header__btn{
+    background-color: #0F33FF;
+    display: none;
+
+    position: absolute !important;
+    top: 20px;
+}
+
+.logo{
+
+    &__container{
+        width: 105px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    &__name{
+        color: #fff;
+        text-transform: uppercase;
+        font-weight: bold;
+        font-size: 16px;
+    }
+}
+
+
+.navigation-button{
+ 
+    cursor: pointer;
+    height: 20px;
+    width: 23px;
+
+    display: flex;
+    justify-content: center;
+
+    & > span{
+
+        align-self: center;
+        position: relative;
+
+        width: 16px;
+        height: 2px;
+        background-color: #fff;
+        display: block;
+
+        &::before, &::after{
+            content: '';
+            height: 2px;
+            width: 23px;
+            background-color: #fff;
+            display: block;
+    
+            position: absolute;
+            left: -4px;
+    
+    
+        }
+        &::before{
+            top: -7px;
+    
+        }
+        &::after{
+            top: 7px;
+        }
+    }
+
+}
+
+.btn--fi{
+    animation-name: fade-in;
+    animation-duration: .5s;
+}
+
+.btn--fo{
+    animation-name: fade-out;
+    animation-duration: 1.2s;
+}
+
+@keyframes fade-out{
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+       
+    }
+}
+
+@keyframes fade-in{
+    from{
+        opacity: 1;
+    }
+    to{
+        opacity: 0;
+    }
+}
+
+@media(max-width:600px){
+    .header__btn{
+        visibility: hidden;
+    }
+}

@@ -1,0 +1,135 @@
+@import 'style_nule';
+@import '_header';
+@import '_sidebar';
+@import '_navigation';
+@import '_home';
+@import '_works';
+@import '_about';
+@import '_contact';
+@import '_hire';
+
+body{
+    background-color: #0C0C0C;
+    font-family: 'Montserat', sans-serif;
+    height: 100vh;
+    color: #fff;
+
+}
+
+.flex-container{
+    // display: flex;
+    // align-items: center;
+    // justify-content: center;
+}
+
+.bg{
+    position: absolute;
+    z-index: -100;
+    width: 100%;
+    height: 100vh;
+
+}
+
+.bg-active{
+    background-size: cover;
+    background-image: url(../img/contact-visual.png);
+    background-position: center;
+
+    animation-name: fade-out;
+    animation-duration: 0.5s;
+
+}
+
+.container{
+    max-width: 1480px;
+    margin: 0 auto;
+    height: 100vh;
+
+    padding: 0 40px;
+}
+
+.main{
+    padding: 50px 0 0 ;
+    height: 90vh;
+    width: 100%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+a{
+    font-size: 14px;
+    color: rgba(255, 255, 255, .5);
+}
+
+.wrapper{
+    transition: transform .5s ease-in-out;
+    
+    outline: 30px outset #0F33FF;    
+
+    overflow: hidden;
+
+}
+
+.active-wrapper{
+    //transform-origin: 0 50%;
+    //transform-origin: left center;
+    transform: perspective(3000px) 
+    rotateY(25deg) 
+    translateZ(-700px)
+    translateX(100px);
+    
+    cursor: pointer;
+
+
+}
+
+.cover{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+
+    z-index: 100;
+}
+
+.content{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+   
+}
+
+
+.active-page{
+    display: block;
+    animation-name: fade-out;
+    animation-duration: 0.5s;
+
+}
+
+.page--fi{
+    animation-name: fade-in;
+    animation-duration: 0.5s;
+}
+
+
+@keyframes fade-out{
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+       
+    }
+}
+
+@keyframes fade-in{
+    from{
+        opacity: 1;
+    }
+    to{
+        opacity: 0;
+    }
+}

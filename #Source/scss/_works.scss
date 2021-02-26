@@ -1,0 +1,231 @@
+.works{
+   
+    display: none;
+
+
+    &__title{
+        h2{
+            font-size: 30px;
+            text-align: center;
+            font-weight: 900;
+        }
+
+        margin-bottom: 60px;
+    }
+
+    &__wrapper{
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+
+        max-width: 900px;
+
+    }
+
+    &__container{
+        position: relative;
+        top: 0;
+    }
+
+
+}
+
+.works--fadeIn{
+    
+    animation-name: fadeIn-Out;
+    animation-timing-function: ease-in-out;
+    animation-duration: 1.5s;
+
+}
+
+
+.work{
+
+    flex: 0 0;
+
+    &:nth-of-type(2){
+        margin: 0 40px;
+    }
+
+    &__title{
+        text-align: center;
+        display: block;
+
+        text-transform: uppercase;
+        font-weight: 900;
+
+        margin: 20px 0;
+
+        color: rgba(255, 255, 255, .3);
+        font-size: 12px;
+
+        & + p{
+            text-align: center;
+            line-height: 18px;
+            font-weight: 600;
+            display: none;
+        }
+    }
+
+    &__img{
+        border-radius: 50%;
+        width: 150px;
+        height: 150px;
+
+        background-size: cover;
+
+        margin: 0 auto;
+
+        &1{
+            background-image: url(../img/work-alex-nowak.jpg);
+        }
+        &2{
+            background-image: url(../img/work-metiew-smith.jpg);
+        }
+        &3{
+            background-image: url(../img/work-victory.jpg);
+        }
+    }
+
+
+}
+
+.active-work{
+
+    .work__img{
+        width: 300px;
+        height: 300px;
+    }
+
+    .work__title,
+    .work__title + p{
+        color: #fff;
+        display: block;
+    }
+
+    .work__title{
+        font-size: 16px;
+    }
+}
+
+/*Slider buttons*/
+
+.slider-btn{
+    position: absolute;
+    top: 50%;
+
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+
+    background-color: #282828;
+    padding: 17px 0;
+
+    text-align: center;
+
+    cursor: pointer;
+
+    &--right{
+        right: -55px;
+        transform: rotateY(180deg);
+    }
+
+    &--left{
+        left: -55px;
+    }
+}
+
+@keyframes fadeIn-Out {
+
+    0%{
+        opacity: 1;
+    }
+    50%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+
+
+@media(max-width:945px){
+    .work{
+
+        &__img{
+            width: 125px;
+            height: 125px;
+        }
+
+        &:nth-of-type(2){
+            margin: 0 20px;
+        }
+    }
+
+    .active-work{
+        .work__img{
+            width: 250px;
+            height: 250px;
+        }
+    }
+}
+
+@media(max-width:850px){
+    .work{
+
+        &__img{
+            width: 100px;
+            height: 100px;
+        }
+
+        &:nth-of-type(2){
+            margin: 0 10px;
+        }
+    }
+
+    .active-work{
+        .work__img{
+            width: 200px;
+            height: 200px;
+        }
+    }
+}
+
+@media(max-width:850px){
+    .work{
+
+        &:nth-of-type(1){
+            display: none;
+        }
+
+        &:nth-of-type(3){
+            display: none;
+        }
+
+    }
+
+    .active-work{
+        .work__img{
+            width: 300px;
+            height: 300px;
+        }
+    }
+}
+
+@media(max-width:580px){
+    .slider-btn{
+        &--left{
+            left: -35px;
+        }
+
+        &--right{
+            right: -35px;
+        }
+    }
+}
+
+@media(max-width:545px){
+    .slider-btn{
+        display: none;
+    }
+}

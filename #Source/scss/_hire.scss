@@ -1,0 +1,199 @@
+.hire{
+  
+    display: none;
+
+    width: 100%;
+
+    &__container{
+        max-width: 700px;
+    }
+
+    &__title{
+        text-align: center;
+        font-size: 30px;
+
+        margin-bottom: 30px;
+        
+
+        h2{
+            font-weight: 900;
+        }
+
+    }
+}
+
+.form{
+
+    &__checkbox-container{
+        
+        margin: 0 0 50px;
+
+        & input{
+            display: none;
+        }
+
+        & label{
+            line-height: 50px;
+            width: 204px;
+            text-align: center;
+        
+            display: block;
+            background-color: transparent;
+            border: 2px solid #fff;
+
+            font-size: 16px;
+
+            font-weight: 900;
+
+            margin: 20px 0;
+
+            cursor: pointer;
+
+            transition: all .2s ease-in-out;
+
+            &{
+                svg{
+                    width: 0;
+                    transition: width .2s linear;
+                }
+            }
+        }
+    }
+
+    &__first-line{
+        display: flex;
+        justify-content: space-between;
+    }
+
+    &__second-line{
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
+
+        padding: 0 100px;
+    }
+
+    &__fields-container{
+
+        display: flex;
+        justify-content: space-between;
+
+        div{
+            position: relative;
+            max-width: 315px;
+
+            &:nth-of-type(1){
+                margin-right: 20px;
+            }
+        }
+
+
+
+        & div > label{
+            position: absolute;
+            z-index: -1;
+            left:0;
+            font-size: 30px;
+            font-weight: 700;
+
+            transition: all .2s linear;
+        }
+
+        & div > input{
+            
+            width: 100%;
+            display: inline-block;
+            background-color: transparent;
+
+            border-bottom: 2px solid #fff;
+
+            font-size: 30px;
+            font-weight: bold;
+            color: #fff;
+
+            &:focus + label{
+                transform: translateY(-20px);
+                font-size: 14px;
+                
+            }
+
+            &:valid + label{
+                transform: translateY(-20px);
+                font-size: 14px;
+            } 
+            
+            
+            &[id="email"]:not(:focus):invalid + label{
+                transform: translateY(-20px);
+                font-size: 14px;
+            }
+
+            &[id="email"]:placeholder-shown:not(:focus) + label{
+                transform: translateY(0px);
+                font-size: 30px;
+            }
+
+
+
+        }
+
+        margin-bottom: 50px;
+    }
+
+    &__btn{
+        max-width: 400px;
+        margin: 0 auto;
+        button{
+            width: 100%;
+            line-height: 50px;
+            color: #fff;
+            background-color: #0F33FF ;
+            font-size: 16px;
+            text-transform: uppercase;
+            font-weight: 900;
+
+        }
+    }
+}
+
+.active-checkbox{
+    background-color: #0F33FF !important;
+    border-color: #0F33FF !important;
+
+    svg{
+        width: 15px !important;
+    }
+}
+
+
+@media(max-width: 693px){
+
+    .form{
+
+        &__fields-container{
+            
+
+        }
+
+        &__checkbox-container{
+            display: flex;
+            justify-content: space-around;
+
+            & label{
+                width: 154px;
+                font-size: 14px;
+
+                margin: 10px 0;
+            }
+        }
+
+        &__first-line{
+            flex-direction: column;
+        }
+
+        &__second-line{
+            flex-direction: column;
+            padding: 0;
+        }
+    }
+}

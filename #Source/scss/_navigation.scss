@@ -1,0 +1,148 @@
+.navigation{
+    
+    display: none;
+    position: absolute;
+    top: 25%;
+    right: 5%;
+
+    transition: .2s;
+
+
+    ul{
+
+        text-align: center;
+
+        li{
+            position: relative;
+            margin: 20px 0;
+            a{
+                font-size: 55px;
+                color: #fff;
+                font-weight: 900;
+
+                &::before{
+                    content: '';
+                    height: 10px;
+                    width: 0;
+                    display: block;
+                    background-color: #0F33FF;
+
+                    position: absolute;
+                    top: 25px;
+                    left: 0;
+                }
+            }
+        }
+    }
+
+}
+
+.navigation--show{
+    display: inline-block;
+
+    animation-duration: .8s;
+    animation-name: navigation--show;
+}
+
+
+
+.active-navlink{
+    a{
+        &::before{
+            width: 100% !important;
+        }
+    }
+}
+
+@keyframes navigation--show {
+    from {
+      transform: scale(0);
+      opacity: 0;
+    }
+  
+    to {
+        
+      transform: scale(1);
+      opacity: 1;
+    }
+}
+
+@media(max-width:1200px){
+    .navigation{
+        right: 2.5%;
+    }
+}
+
+@media(max-width:924px){
+    .navigation{
+        right: 4%;
+        ul li a{
+            font-size: 44px;
+        }
+    }
+}
+
+@media(max-width:656px){
+    .navigation{
+        right: 7%;
+        ul li a{
+            font-size: 33px;
+
+            &::before{
+
+                top: 15px;
+                left: 0;
+            }
+        }
+    }
+}
+
+  
+
+
+
+// @media(max-width:930px){
+
+//     .navigation{
+//         right: 15%;
+//     }
+// }
+
+// @media(max-width:730px){
+
+//     .navigation{
+//         right: 10%;
+//     }
+// }
+
+// @media(max-width:630px){
+
+//     .navigation{
+//         right: 15%;
+//         top: 30%;
+
+//         ul li a{
+//             font-size: 33px;
+
+//             &::before{
+//                 top: 15px;
+//             }
+//         }
+//     }
+// }
+
+// @media(max-width:500px){
+
+//     .navigation{
+//         right: 5%;
+//         top: 30%;
+
+//         ul li a{
+//             font-size: 33px;
+
+//             &::before{
+//                 top: 15px;
+//             }
+//         }
+//     }
+// }

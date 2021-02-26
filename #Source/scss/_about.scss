@@ -1,0 +1,186 @@
+.about{
+    display: none;
+
+    &__container{
+        max-width: 910px;
+        max-height: 641px;
+
+    }
+
+    &__header{
+        display: flex;
+        justify-content: space-between;
+        
+    }
+
+    &__title{
+        font-size: 68px;
+        margin-right: 110px;
+        h1{
+            font-weight: 900;
+
+            margin-bottom: 50px;
+            margin-top: 40px;
+        }
+    }
+
+
+    &__footer{
+        display: flex;
+        justify-content: space-between;
+
+        padding-top: 40px ;
+
+        max-width: 600px;
+
+        position: relative;
+        top: -160px;
+        
+        
+    }
+
+    &__btn{
+        margin-left: -10px;
+        
+        svg{
+            transition: transform .2s ease-in-out;
+        }
+
+        &:hover{
+
+            svg{
+                transform: translateX(10px);
+                
+            }
+        }
+    }
+}
+
+
+.about-card{
+
+    outline: 10px solid #0F33FF;
+    width: 175px;
+    height: 75px;
+
+    & .card__img{
+        height: 75px;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        &_1{
+            background-image: url(../img/about-winners.jpg);
+        }
+        &_2{
+            background-image: url(../img/about-philosophy.jpg);
+        }
+        &_3{
+            background-image: url(../img/about-history.jpg);
+        }
+    }
+
+    & .card__title{
+        color: #fff;
+        font-weight: 900;
+        position: relative;
+        top: 5px;
+
+        transition: top .2s ease-in-out;
+        
+        
+
+    }
+
+    &:hover{
+
+        .card__title{
+            top: 15px
+        }
+
+    }
+
+}
+
+
+
+@media(max-width:966px){
+    .about{
+
+        &__header{
+
+            img{
+                width: 319px;
+            }
+        }
+
+        &__footer{
+            padding-top: 120px;
+        }
+    }
+}
+
+@media(max-width:925px){
+    .about{
+
+        &__title{
+            font-size: 55px;
+            margin-right: 30px;
+        }
+
+        &__header{
+
+            img{
+                width: 300px;
+            }
+        }
+
+        &__footer{
+            padding-top: 100px;
+        }
+
+        &-card:nth-of-type(2){
+            margin: 0 40px;
+        }
+    }
+}
+
+@media(max-width:703px){
+    .about{
+
+        &__title{
+            font-size: 64px;
+            margin-right: 0;
+        }
+
+        &__header{
+
+            img{
+                display: none;
+            }
+        }
+
+        &__footer{
+            padding-top: 200px;
+        }
+    }
+}
+
+@media(max-width:690px){
+    .about{
+        &__footer{
+            display: none;
+        }
+
+        &__title h1{
+            margin-top: 0;
+        }
+    }
+}
+
+@media(max-width:411px){
+    .about{
+        &__title{
+            font-size: 44px;
+        }
+    }
+}

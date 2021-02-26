@@ -1,0 +1,58 @@
+.contact{
+    display: none;
+    
+    &__frame{
+        
+        padding: 20px 30px;
+
+        max-width: 310px;
+
+        background-color: #0C0C0C;
+
+        box-shadow: 0 0 30px 0 rgb(0 0 0 / 75%);
+
+        position: relative;
+        right: -150px;
+        top: -20px;
+
+        li{
+            margin: 20px 0;
+            font-weight: bold;
+            text-align: center;
+        }
+    }
+
+    &__btn{
+        padding: 10px 8px;
+        background-color: #1769FF;
+
+        width: 130px;
+        
+        cursor: pointer;
+
+        font-weight: 600;
+
+        margin: 20px auto !important;
+
+        &-dribble{
+            background-color: #EA4C89;
+        }
+
+        &-contact{
+            background-color: #0F33FF;
+            text-transform: uppercase;
+            
+        }
+    }
+
+
+}
+
+
+@media(max-width:690px){
+    .contact{
+        &__frame{
+            position: static;
+        }
+    }
+}
