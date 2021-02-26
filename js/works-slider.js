@@ -53,3 +53,51 @@ function swapDiv(parent, rightBtn) {
         parent.insertBefore(parent.children[2], parent.children[0])
     }
   }
+
+swipingWorks()
+
+  function swipingWorks(){
+  
+    let y = null
+    let x = null
+
+    worksWrapper.addEventListener('touchstart', e => {
+        y = e.touches[0].pageY
+        x = e.touches[0].pageX
+    });
+    worksWrapper.addEventListener('touchmove', e => {
+
+        if (!y) return;
+
+        let activeWork = findingActiveLink(workCards, 'active-work')
+        let comp = largestPx(e.touches[0].pageY, y)
+        console.log(comp)
+        if(e.touches[0].pageX > x && comp < 9){
+            let previousWork = activeWork.previousElementSibling || workCards[workCards.length - 1] 
+            fadeInOutAnimation(activeWork, previousWork, false)
+        }
+        if(e.touches[0].pageX < x && comp < 9){
+            let activeWork = findingActiveLink(workCards, 'active-work')
+            let nextWork = activeWork.nextElementSibling || workCards[0] 
+        
+            fadeInOutAnimation(activeWork, nextWork, true)
+        }
+
+        y = null;
+    });
+}
+
+function largestPx(x1, x2){
+    if(x1 > x2){
+       // console.log([x1,x2])
+        return x1 - x2
+    }
+    if(x1 < x2){
+       // console.log([x1,x2])
+        return x2 - x1
+    }
+    if(x1 == x2){
+       // console.log([x1,x2])
+        return 0
+    }
+}

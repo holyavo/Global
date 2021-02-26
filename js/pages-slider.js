@@ -70,21 +70,32 @@ function swipingPages(){
         if (!y) return;
 
         let activePage = findingActiveLink(pages, 'active-page')
+        let comp = largestPx(e.touches[0].pageX, x)
 
-        if(e.touches[0].pageY > y){
-            console.log(e.touches[0].pageY > y && ((e.touches[0].pageX + x) < -1000))
+        if(e.touches[0].pageY > y && comp < 5) {
             let previousPage = activePage.parentNode.previousElementSibling?.children[0] || pages[pages.length-1]
             changePage(null, previousPage)
-        }else{
-
+        }
+        if(e.touches[0].pageY < y && comp < 5){
             let nextPage = activePage.parentNode.nextElementSibling?.children[0] || pages[0]
             changePage(null, nextPage)
-
         }
-
         y = null;
     });
 }
 
-
+function largestPx(x1, x2){
+    if(x1 > x2){
+       // console.log([x1,x2])
+        return x1 - x2
+    }
+    if(x1 < x2){
+       // console.log([x1,x2])
+        return x2 - x1
+    }
+    if(x1 == x2){
+       // console.log([x1,x2])
+        return 0
+    }
+}
 
