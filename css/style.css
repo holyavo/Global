@@ -954,6 +954,7 @@ body {
   font-family: "Montserat", sans-serif;
   height: 100%;
   color: #fff;
+  overflow: hidden;
 }
 
 .bg {
